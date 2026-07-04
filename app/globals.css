@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-base: #080b14;
+  --bg-card: rgba(13, 17, 30, 0.85);
+  --bg-input: rgba(255,255,255,0.05);
+  --bg-input-focus: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.08);
+  --border-focus: rgba(66,153,225,0.6);
+  --text-primary: #e2e8f0;
+  --text-secondary: #718096;
+  --text-muted: #4a5568;
+  --blue: #4299e1;
+  --blue-dark: #2b6cb0;
+  --purple: #9f7aea;
+  --green: #48bb78;
+  --red: #fc8181;
+  --yellow: #f6ad55;
+  --font: 'Inter', system-ui, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Animations ─────────────────────────────────────── */
+@keyframes float-orb {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-20px) scale(1.05); }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(72,187,120,0.5); }
+  50%       { opacity: 0.6; box-shadow: 0 0 0 6px rgba(72,187,120,0); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX(6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+
+/* ── Utility classes ─────────────────────────────────── */
+.animate-fade-up {
+  animation: fade-up 0.5s ease both;
+}
+.animate-fade-up-delay {
+  animation: fade-up 0.5s ease 0.1s both;
+}
+.animate-fade-up-delay-2 {
+  animation: fade-up 0.5s ease 0.2s both;
+}
