@@ -67,6 +67,15 @@ export default function HomePage() {
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <Link href="/docs" style={navLinkStyle}>API Docs</Link>
           <Link href="/api/health" style={navLinkStyle}>Health</Link>
+          <Link href="/predict" style={{
+            ...navLinkStyle,
+            background: "rgba(66,153,225,0.06)",
+            border: "1px solid rgba(66,153,225,0.2)",
+            borderRadius: 7,
+            padding: "6px 14px",
+            color: "#63b3ed",
+            fontWeight: 600,
+          }}>📈 Predict</Link>
 
           {user ? (
             <>
