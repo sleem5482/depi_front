@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const AZURE_URL =
-  "https://anomalydetection-c9e2b6abb5hbggb4.francecentral-01.azurewebsites.net";
+  "https://anomalydetection-c9e2b6abb5hbggb4.francecentral-01.azurewebsites.net";//solve error
 const BASE_URL = (process.env.NEXT_PUBLIC_BASE_URL ?? AZURE_URL).replace(/\/$/, "");
 
 // ── Generic proxy handler ─────────────────────────────────────────────────────
