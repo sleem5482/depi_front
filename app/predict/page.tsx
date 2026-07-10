@@ -3,7 +3,11 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 
-const BASE_URL = (process.env.NEXT_PUBLIC_BASE_URL ?? "").replace(/\/$/, "");
+const BASE_URL =
+  typeof window !== "undefined"
+    ? "/proxy"
+    : (process.env.NEXT_PUBLIC_BASE_URL ?? "").replace(/\/$/, "");
+
 
 // ── Types ────────────────────────────────────────────────────────────────────
 interface PredictionData {
@@ -268,7 +272,7 @@ export default function PredictPage() {
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
           <div style={{ width: 30, height: 30, borderRadius: 8, background: "linear-gradient(135deg,#4299e1,#9f7aea)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14 }}>🔬</div>
           <span style={{ fontWeight: 800, fontSize: 15, color: "var(--text-primary)", letterSpacing: "-0.3px" }}>
-            PRIDE<span style={{ color: "#63b3ed" }}>.io</span>
+            ECG5000<span style={{ color: "#63b3ed" }}>.io</span>
           </span>
         </Link>
 
@@ -302,7 +306,7 @@ export default function PredictPage() {
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: "var(--text-muted)", letterSpacing: "1.5px", textTransform: "uppercase" }}>
-                PRIDE · Anomaly Detection
+                ECG5000 · Anomaly Detection
               </span>
               <span style={{ width: 5, height: 5, borderRadius: "50%", background: "#48bb78", display: "inline-block", animation: "pulse-dot 2s infinite" }} />
               <span style={{ fontSize: 11, fontWeight: 600, color: "#48bb78" }}>Live API</span>

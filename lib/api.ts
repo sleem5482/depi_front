@@ -1,8 +1,13 @@
 // ─── API Client ────────────────────────────────────────────────────────────────
-// BASE_URL is read from NEXT_PUBLIC_BASE_URL (browser) or BASE_URL (server).
+// In the browser we route through Next.js's /proxy rewrite to avoid CORS.
+// On the server (SSR/RSC) we call the Azure backend directly.
 
+const RAW_URL = (process.env.NEXT_PUBLIC_BASE_URL ?? process.env.BASE_URL ?? "").replace(/\/$/, "");
 const BASE_URL =
-  (process.env.NEXT_PUBLIC_BASE_URL ?? process.env.BASE_URL ?? "").replace(/\/$/, "");
+  typeof window !== "undefined"
+    ? "/proxy"   // browser → Next.js proxy → Azure (no CORS)
+    : RAW_URL;   // server  → Azure directly
+
 
 // ── Endpoint map ──────────────────────────────────────────────────────────────
 export const API = {
@@ -73,23 +78,23 @@ export async function apiFetch<T>(url: string, options: RequestInit = {}): Promi
 // ── Token helpers (client-only) ───────────────────────────────────────────────
 export function getToken(): string | null {
   if (typeof window === "undefined") return null;
-  return localStorage.getItem("pride_token");
+  return localStorage.getItem("ecg5000_token");
 }
 
 export function saveSession(token: string, user: MeResponse) {
-  localStorage.setItem("pride_token", token);
-  localStorage.setItem("pride_user", JSON.stringify(user));
+  localStorage.setItem("ecg5000_token", token);
+  localStorage.setItem("ecg5000_user", JSON.stringify(user));
 }
 
 export function clearSession() {
-  localStorage.removeItem("pride_token");
-  localStorage.removeItem("pride_user");
+  localStorage.removeItem("ecg5000_token");
+  localStorage.removeItem("ecg5000_user");
 }
 
 export function getStoredUser(): MeResponse | null {
   if (typeof window === "undefined") return null;
   try {
-    const raw = localStorage.getItem("pride_user");
+    const raw = localStorage.getItem("ecg5000_user");
     return raw ? (JSON.parse(raw) as MeResponse) : null;
   } catch {
     return null;

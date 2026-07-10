@@ -82,7 +82,7 @@ export default function RegisterPage() {
       });
 
       if (loginData.access_token) {
-        localStorage.setItem("pride_token", loginData.access_token);
+        localStorage.setItem("ecg5000_token", loginData.access_token);
         try {
           const me = await fetchMe();
           saveSession(loginData.access_token, me);
@@ -140,7 +140,7 @@ export default function RegisterPage() {
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 56, height: 56, borderRadius: 16, fontSize: 24, marginBottom: 16, background: "linear-gradient(135deg,rgba(159,122,234,0.2),rgba(72,187,120,0.15))", border: "1px solid rgba(159,122,234,0.3)" }}>🚀</div>
           <h1 style={{ fontSize: 26, fontWeight: 800, marginBottom: 6, background: "linear-gradient(135deg,#e2e8f0,#b794f4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Create account</h1>
-          <p style={{ color: "var(--text-secondary)", fontSize: 14 }}>Join PRIDE Anomaly Detection</p>
+          <p style={{ color: "var(--text-secondary)", fontSize: 14 }}>Join ECG5000 Anomaly Detection</p>
         </div>
 
         {error && (

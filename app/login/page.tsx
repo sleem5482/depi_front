@@ -44,7 +44,7 @@ export default function LoginPage() {
 
       if (data.access_token) {
         // Save token first so fetchMe can use it
-        localStorage.setItem("pride_token", data.access_token);
+        localStorage.setItem("ecg5000_token", data.access_token);
         // Fetch user profile from /auth/me
         try {
           const me = await fetchMe();
@@ -111,7 +111,7 @@ export default function LoginPage() {
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
           }}>Welcome back</h1>
           <p style={{ color: "var(--text-secondary)", fontSize: 14 }}>
-            Sign in to PRIDE Anomaly Detection
+            Sign in to ECG5000 Anomaly Detection
           </p>
         </div>
 

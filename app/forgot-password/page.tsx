@@ -13,7 +13,7 @@ interface ForgotPasswordResponse {
   expires_in: string;
 }
 
-const STORAGE_KEY = "pride_reset_token";
+const STORAGE_KEY = "ecg5000_reset_token";
 
 export default function ForgotPasswordPage() {
   const router                = useRouter();

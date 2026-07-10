@@ -8,7 +8,7 @@ Write-Host "=== ANOMALY SCORE ==="
 $result | ConvertTo-Json -Depth 5
 
 $body2 = @{
-    email = "test@pride.io"
+    email = "test@ecg5000.io"
     password = "Test1234!"
     name = "Test User"
 } | ConvertTo-Json

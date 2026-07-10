@@ -59,7 +59,7 @@ export default function HomePage() {
             fontSize: 16,
           }}>🔬</div>
           <span style={{ fontWeight: 800, fontSize: 16, color: "var(--text-primary)", letterSpacing: "-0.3px" }}>
-            PRIDE<span style={{ color: "#63b3ed" }}>.io</span>
+            ECG5000<span style={{ color: "#63b3ed" }}>.io</span>
           </span>
         </div>
 
@@ -157,7 +157,7 @@ export default function HomePage() {
           color: "#63b3ed", fontSize: 12, fontWeight: 600, letterSpacing: "0.5px",
         }}>
           <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#48bb78", display: "inline-block", animation: "pulse-dot 2s infinite" }} />
-          API v1.0 · Live · PRIDE Dataset
+          API v1.0 · Live · ECG5000 Dataset
         </div>
 
         {/* Headline */}
@@ -167,7 +167,7 @@ export default function HomePage() {
           background: "linear-gradient(135deg, #e2e8f0 0%, #63b3ed 45%, #9f7aea 80%, #b794f4 100%)",
           WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
         }}>
-          PRIDE Anomaly<br />Detection Platform
+          ECG5000 Anomaly<br />Detection Platform
         </h1>
 
         <p style={{
@@ -288,7 +288,7 @@ export default function HomePage() {
         <h2 style={{
           fontSize: "clamp(24px,3.5vw,36px)", fontWeight: 800, textAlign: "center",
           marginBottom: 12, color: "var(--text-primary)", letterSpacing: "-0.5px",
-        }}>Why PRIDE?</h2>
+        }}>Why ECG5000?</h2>
         <p style={{ color: "var(--text-secondary)", textAlign: "center", fontSize: 15, marginBottom: 48 }}>
           Built for real-world IoT safety monitoring with clinical-grade precision.
         </p>
@@ -361,7 +361,7 @@ export default function HomePage() {
         display: "flex", alignItems: "center", justifyContent: "center",
         gap: 24, flexWrap: "wrap",
       }}>
-        <span style={{ color: "var(--text-muted)", fontSize: 12 }}>PRIDE Dataset · Milestone 3 REST API</span>
+        <span style={{ color: "var(--text-muted)", fontSize: 12 }}>ECG5000 Dataset · Milestone 3 REST API</span>
         <Link href="/api/health"     style={footerLink}>Health Check</Link>
         <Link href="/api/openapi.json" style={footerLink}>OpenAPI JSON</Link>
         <Link href="/docs"           style={footerLink}>Swagger UI</Link>

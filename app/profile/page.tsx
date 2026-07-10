@@ -113,7 +113,7 @@ export default function ProfilePage() {
               letterSpacing: "-0.3px",
             }}
           >
-            PRIDE<span style={{ color: "#63b3ed" }}>.io</span>
+            ECG5000<span style={{ color: "#63b3ed" }}>.io</span>
           </span>
         </Link>
 

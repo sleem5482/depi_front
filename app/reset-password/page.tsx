@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { API, apiFetch } from "@/lib/api";
 import type { ResetPasswordBody } from "@/lib/api";
 
-const STORAGE_KEY = "pride_reset_token";
+const STORAGE_KEY = "ecg5000_reset_token";
 
 function ResetPasswordForm() {
   const router       = useRouter();
